@@ -89,9 +89,18 @@
         var $mcj = jQuery.noConflict(true);</script>
     </div>
 </div>
-<audio id="welcomeAudio" autoplay>
-    <source src="resources/opefw.mp3" type="audio/mpeg">
+<audio id="welcomeAudio">
+    <source id="audioSource" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
+<script>
+    window.onload = function () {
+        const audio = document.getElementById('welcomeAudio');
+        const source = document.getElementById('audioSource');
+        source.src = "resources/opefw.mp3";
+        audio.load();
+        audio.play();
+    };
+</script>
 </body>
 </html>
